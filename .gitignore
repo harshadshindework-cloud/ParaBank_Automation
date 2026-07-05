@@ -1,0 +1,33 @@
+# Maven
+target/
+
+# IntelliJ
+.idea/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Reports
+reports/
+screenshots/
+
+# TestNG
+test-output/
+
+# Extent Reports
+extent-report/
+
+# Dependency Reduced POM
+dependency-reduced-pom.xml
