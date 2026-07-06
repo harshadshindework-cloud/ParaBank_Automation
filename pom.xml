@@ -34,7 +34,9 @@
     <maven.surefire.plugin.version>3.5.3</maven.surefire.plugin.version>
 
     <!-- UI Automation -->
+
     <selenium.version>4.34.0</selenium.version>
+    <webdrivermanager.version>6.2.0</webdrivermanager.version>
 
 </properties>
 
@@ -54,6 +56,13 @@
         <artifactId>selenium-java</artifactId>
         <version>${selenium.version}</version>
     </dependency>
+
+    <dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>${webdrivermanager.version}</version>
+    </dependency>
+
 </dependencies>
 
 <build>
