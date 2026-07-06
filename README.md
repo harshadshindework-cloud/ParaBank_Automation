@@ -46,4 +46,4 @@ src/test/resources
 
 ## Status
 
-🚧 Framework Setup in Progress
+🚧 Framework Setup in ready and moving towards the login design module.
