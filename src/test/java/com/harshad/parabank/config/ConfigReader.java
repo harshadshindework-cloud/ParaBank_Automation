@@ -2,6 +2,7 @@ package com.harshad.parabank.config;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.Properties;
 
 public class ConfigReader {
@@ -27,7 +28,7 @@ public class ConfigReader {
     }
 
     public static String getProperty(String key) {
-        return properties.getProperty(key);
+        return Objects.requireNonNull(properties.getProperty(key), "Missing config property: " + key);
     }
 
 }
