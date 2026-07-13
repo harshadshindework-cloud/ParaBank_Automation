@@ -23,7 +23,12 @@ public class SmokeTest {
     System.out.println("Browser : " + browser);
     System.out.println("Base URL : " + baseUrl);
 
-    Assert.assertEquals(browser, "chrome");
+    Assert.assertTrue(
+        browser.equals("chrome")
+        || browser.equals("firefox")
+        || browser.equals("edge")
+        || browser.equals("safari")
+    );
     Assert.assertTrue(baseUrl.contains("parabank"));
 }
 

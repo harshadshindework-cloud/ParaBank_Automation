@@ -1,4 +1,5 @@
 package com.harshad.parabank.runners;
+import org.testng.annotations.DataProvider;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -7,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 
         features = "src/test/resources/features", //feature file path
         glue = {"com.harshad.parabank.stepdefinitions", "com.harshad.parabank.hooks"}, //step definition and hook package paths
-        tags = "@LoginTest", //tag name to run the specific test
+        tags = "@UnsuccessfulLogin", //tag name to run the specific test
         monochrome = true, //display the console output in a proper readable format
 
         plugin = { //to generate different types of reporting
@@ -18,12 +19,11 @@ import io.cucumber.testng.CucumberOptions;
 
 )
 
-public class TestRunner extends AbstractTestNGCucumberTests { //extends the AbstractTestNGCucumberTests class to run the cucumber tests with TestNG
+public class TestRunner extends AbstractTestNGCucumberTests {
 
-    public static void main(String[] args) {
-        org.testng.TestNG testng = new org.testng.TestNG();
-        testng.setTestClasses(new Class[]{TestRunner.class});
-        testng.run();
+    @Override
+    @DataProvider(parallel = false)
+    public Object[][] scenarios() {
+        return super.scenarios();
     }
-
 }

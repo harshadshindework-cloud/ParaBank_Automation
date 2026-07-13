@@ -1,0 +1,7 @@
+TestCaseID,Scenario,Username,Password,ExpectedErrorMessage
+TC_LOGIN_002,Invalid Username,invalidUser,demo,The username and password could not be verified.
+TC_LOGIN_003,Invalid Password,john,Invalid@123,The username and password could not be verified.
+TC_LOGIN_004,Invalid Username and Password,invalidUser,Invalid@123,The username and password could not be verified.
+TC_LOGIN_005,Blank Username,,demo,Please enter a username and password.
+TC_LOGIN_006,Blank Password,john,,Please enter a username and password.
+TC_LOGIN_007,Blank Username and Password,,,Please enter a username and password.

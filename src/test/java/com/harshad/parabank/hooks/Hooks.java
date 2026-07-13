@@ -20,9 +20,10 @@ public class Hooks {
 
     @After
     public void tearDown() {
-     /*    if (driver != null) {
+         boolean keepBrowserOpen= Boolean.parseBoolean(ConfigReader.getProperty("keep.browser.open"));
+        
+         if(!keepBrowserOpen){
             DriverFactory.quitDriver();
-            driver = null;
-        }*/
-    }
+}   
+        }
 }

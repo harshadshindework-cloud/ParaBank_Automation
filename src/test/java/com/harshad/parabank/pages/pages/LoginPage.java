@@ -13,6 +13,8 @@ public class LoginPage {
     private final By loginButton = By.cssSelector("input[value='Log In']");
     private final By accountOverviewPage = By.cssSelector("h1.title");
 
+    private final By invalidLoginError= By.className("error");
+
     //constructor
     public LoginPage(WebDriver driver) {
         this.waitUtility = new WaitUtility(driver);
@@ -32,6 +34,15 @@ public class LoginPage {
         return waitUtility.waitForText(accountOverviewPage, "Accounts Overview");
     }
 
-     
+    public String getInvalidLoginErrorMessage() {
+
+    return waitUtility
+            .waitForVisibility(invalidLoginError)
+            .getText();
+
+}   
+
+
+    
 
 }

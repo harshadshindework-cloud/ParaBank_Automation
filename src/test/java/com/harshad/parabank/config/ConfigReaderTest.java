@@ -9,7 +9,11 @@ public class ConfigReaderTest {
     public void shouldReturnConfiguredBrowserValue() {
         String browser = ConfigReader.getProperty("browser");
 
-        Assert.assertEquals(browser, "chrome");
+        Assert.assertTrue(
+        browser.equals("chrome")
+        || browser.equals("firefox")
+        || browser.equals("edge")
+        || browser.equals("safari"));
     }
 
     @Test

@@ -1,6 +1,7 @@
 package com.harshad.parabank.stepdefinitions;
 
 import com.harshad.parabank.driver.DriverFactory;
+import com.harshad.parabank.hooks.Hooks;
 import com.harshad.parabank.pages.pages.LoginPage;
 
 import io.cucumber.java.en.Given;
@@ -11,13 +12,12 @@ import org.testng.Assert;
 
 public class LoginSteps {
 
-    private WebDriver driver;
     private LoginPage loginPage;
 
     @Given("User is on the Login page")
     public void user_is_on_the_login_page() {
-        driver = DriverFactory.getDriver();
-        loginPage = new LoginPage(driver);
+           loginPage = new LoginPage(DriverFactory.getDriver());
+
     }
 
     @When("User enters {string} and {string} and clicks on the Login button")
@@ -30,5 +30,11 @@ public class LoginSteps {
         Assert.assertTrue(loginPage.isAccountsOverviewPageDisplayed());
     }
 
+    @Then("User should see the login error message {string}")
+    public void user_should_see_the_login_error_message(String errorMessage) {
+     Assert.assertEquals(
+         loginPage.getInvalidLoginErrorMessage(),
+                errorMessage);    
+        }
 }
 

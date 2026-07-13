@@ -14,10 +14,9 @@ public class DriverFactory {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = ConfigReader.getProperty("browser");
+            String browser = ConfigReader.getProperty("browser").trim().toLowerCase();
 
-            switch (browser.toLowerCase()) {
-
+                switch(browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
